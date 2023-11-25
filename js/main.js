@@ -67,7 +67,6 @@ function searchNumberSmallerThanZero() {
   document.getElementById("showResult").innerHTML = "";
   var content = "Số nguyên dương Nhỏ nhất : " + temp;
   document.getElementById("showResult").innerHTML = content;
-  console.log(4 % 2);
 }
 function numberLastCanDivide() {
   var result = 0;
@@ -78,7 +77,7 @@ function numberLastCanDivide() {
       if (listNumber[i] % 2 == 0) {
         result = this.listNumber[i];
         count++;
-        break; 
+        break;
       }
     }
   }
@@ -89,4 +88,20 @@ function numberLastCanDivide() {
   }
   var content = "Số chẵn cuối cùng của mảng : " + result;
   document.getElementById("showResult").innerHTML = content;
+}
+function sortUpAscending() {
+  var temp = this.listNumber[0];
+  for (var i = 0; i < this.listNumber.length - 1; i++) {
+    for (var j = i + 1; j < this.listNumber.length; j++) {
+      if (listNumber[i] > listNumber[j]) {
+        temp = listNumber[j];
+        listNumber[j] = listNumber[i];
+        listNumber[i] = temp;
+      }
+    }
+  }
+
+  const content = showListNumber(listNumber);
+  document.getElementById("showResult").innerHTML = "Mảng tăng dần: ";
+  document.getElementById("showResult").innerHTML += content;
 }
